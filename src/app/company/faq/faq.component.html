@@ -1,0 +1,93 @@
+<app-navbar></app-navbar>
+
+<main>
+    
+         
+        <!-- FAQ -->
+      <section class="bg-secondary py-5" style="background-image: url('/assets/img/background/imgback.jpg');">
+         <div class=" text-center ">
+            <button [routerLink]="['/company/get-started']" class="btn btn-lg btn-primary me-3 me-sm-4 btn buttonA">Get Started</button>
+            <button [routerLink]="['/company/help-center']" class="btn btn-lg btn-light me-3 me-sm-4 btn  buttonB" >FAQ</button>
+        </div>
+
+         <div class="container my-2 py-md-2 py-lg-5">
+           <div class="row">
+             <div class="col-xl-4 col-md-5 text-center text-md-start pb-2 pb-md-0 mb-4 mb-md-0">
+               <h2 class="pb-3 mb-1 mb-lg-2">Any questions? <br class="d-none d-md-inline">Check out the FAQs</h2>
+               <p class="fs-lg pb-3 mb-2 mb-lg-3">Still have unanswered questions and need to get in touch?</p>
+               <a href="contacts-v2.html" class="btn btn-primary">Contact support</a>
+             </div>
+             <div class="col-md-7 offset-xl-1">
+               <div class="accordion" id="faq">
+                 <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
+                   <h2 class="accordion-header" id="q1-heading">
+                     <button class="accordion-button shadow-none rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#q1" aria-expanded="true" aria-controls="q1">
+                        What is the SeekMake?
+                     </button>
+                   </h2>
+                   <div id="q1" class="accordion-collapse collapse show" aria-labelledby="q1-heading" data-bs-parent="#faq">
+                     <div class="accordion-body fs-sm pt-0">
+                       <p>SeekMake is the world's largest community of manufacturers, offering increased visibility and credibility. </p>
+                       <p class="mb-0">It streamlines manufacturing processes and customer interactions for efficient communication, secure payments, and faster transactions.</p>
+                     </div>
+                   </div>
+                 </div>
+                 <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
+                   <h2 class="accordion-header" id="q2-heading">
+                     <button class="accordion-button shadow-none rounded-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q2" aria-expanded="false" aria-controls="q2">
+                        How does it work?
+                     </button>
+                   </h2>
+                   <div id="q2" class="accordion-collapse collapse" aria-labelledby="q2-heading" data-bs-parent="#faq">
+                     <div class="accordion-body fs-sm pt-0">
+                       <p>Manufacturers List their businesses, Create a Storefront, Enhance the ordering experience for customers, Automate processes, and Grow their business on SeekMake.</p>
+                     </div>
+                   </div>
+                 </div>
+                 <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
+                   <h2 class="accordion-header" id="q3-heading">
+                     <button class="accordion-button shadow-none rounded-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q3" aria-expanded="false" aria-controls="q3">
+                        Why should I join the SeekMake Partner Network?
+
+                     </button>
+                   </h2>
+                   <div id="q3" class="accordion-collapse collapse" aria-labelledby="q3-heading" data-bs-parent="#faq">
+                     <div class="accordion-body fs-sm pt-0">
+                       <p>For many Partners, SeekMake serves as a sales/marketing tool and automation engine to provide customers with instant price estimations, shipping cost and bulk pricing.</p>
+                       <p class="mb-0">The platform also matches customers with manufacturers based on their capabilities and geolocation, offering you jobs from across the World that you would not likely see on your own.</p>
+                     </div>
+                   </div>
+                 </div>
+                 <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
+                   <h2 class="accordion-header" id="q4-heading">
+                     <button class="accordion-button shadow-none rounded-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q4" aria-expanded="false" aria-controls="q4">
+                        What does it cost to join the SeekMake Partner Network?
+
+                     </button>
+                   </h2>
+                   <div id="q4" class="accordion-collapse collapse" aria-labelledby="q4-heading" data-bs-parent="#faq">
+                     <div class="accordion-body fs-sm pt-0">
+                       <p>Manufacturing partners can join SeekMake for free, Getting listed, Receiving RFQs, and using basic Automation tools. For more visibility and Advanced features, they can opt for a monthly subscription starting at just 14,99 euros per month</p>
+                     </div>
+                   </div>
+                 </div>
+                 <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
+                   <h2 class="accordion-header" id="q5-heading">
+                     <button class="accordion-button shadow-none rounded-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q5" aria-expanded="false" aria-controls="q5">
+                        Can I be a SeekMake production partner if I don't have a VAT number or a company?                     </button>
+                   </h2>
+                   <div id="q5" class="accordion-collapse collapse" aria-labelledby="q5-heading" data-bs-parent="#faq">
+                     <div class="accordion-body fs-sm pt-0">
+                       <p>Yes, individuals without a VAT number or a company can still become SeekMake production partners.</p>
+                     </div>
+                   </div>
+                 </div>
+                 
+               </div>  
+             </div>
+           </div>
+         </div>
+       </section>
+  </main>
+
+  <app-footer></app-footer>

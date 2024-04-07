@@ -1,0 +1,84 @@
+
+    <!-- Page wrapper for sticky footer -->
+    <!-- Wraps everything except footer to push footer to the bottom of the page if there is little content -->
+    <main class="page-wrapper">
+
+
+      <!-- Navbar -->
+
+
+      <!-- Page content -->
+      <section class="position-relative h-100 pt-5 pb-4">
+
+        <!-- Sign in form -->
+        <div class="container d-flex flex-wrap justify-content-center justify-content-xl-start h-100 pt-5">
+          <div class="w-100 align-self-end pt-1 pt-md-4 pb-4" style="max-width: 526px;">
+            <h1 class="text-center text-xl-start">Welcome Back</h1>
+            <p class="text-center text-xl-start pb-3 mb-3">Don’t have an account yet? <a [routerLink]="['../register']" >Register here.</a></p>
+           
+           
+            <form class="needs-validation mb-2" name = form #f= "ngForm"
+            (ngSubmit)="f.form.valid && onSubmit ()" novalidate>
+
+              <div class="position-relative mb-4">
+                <label for="email" class="form-label fs-base">Email</label>
+                <input type="email"  name="email" #email="ngModel" id = "email"  [(ngModel)]= "form.email" class="form-control form-control-lg" required>
+                <div class="form_error" *ngIf="email.errors && f.submitted">
+                  Email is required !
+                </div>
+                <div class="invalid-feedback position-absolute start-0 top-100">Please enter a valid email address!</div>
+              </div>
+              <div class="mb-4">
+                <label for="password" class="form-label fs-base">Password</label>
+                <div class="password-toggle">
+                  <input type="password"  name="password" id="password" [(ngModel)]="form.password" #password="ngModel" class="form-control form-control-lg" required>
+                  <label class="password-toggle-btn" aria-label="Show/hide password">
+                    <input class="password-toggle-check" type="checkbox">
+                    <span class="password-toggle-indicator"></span>
+                  </label>
+                  <div class="invalid-feedback position-absolute start-0 top-100">Please enter your password!</div>
+                </div>
+              </div>
+              <div class="mb-4">
+                <div class="form-check">
+                  <input type="checkbox" id="remember" class="form-check-input">
+                  <label for="remember" class="form-check-label fs-base">Remember me</label>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary shadow-primary btn-lg w-100">Sign in</button>
+            </form>
+            <a [routerLink]="['../reset-password']" class="btn btn-link btn-lg w-100">Forgot your password?</a>
+            <hr class="my-4">
+            <h6 class="text-center mb-4">Or sign in with your social network</h6>
+            <div>
+              <div id="google-btn" class="px-0">
+
+              </div>
+              <div>
+                <a href="#" class="flex items-center justify-center w-[67%] px-4 py-2 mt-2 space-x-3 text-sm text-center bg-blue-500 text-white transition-colors duration-200 transform border rounded-lg dark:text-gray-300 dark:border-gray-300 hover:bg-gray-600 dark:hover:bg-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                        <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                    </svg>
+                    <span class="text-sm text-white dark:text-gray-200">Login With Facebook</span></a>
+            </div>
+            </div>
+          </div>
+          <div class="w-100 align-self-end">
+            <p class="nav d-block fs-xs text-center text-xl-start pb-2 mb-0">
+              &copy; All rights reserved. Made by 
+              <a class="nav-link d-inline-block p-0" href="https://createx.studio/" target="_blank" rel="noopener">Createx Studio</a>
+            </p>    
+          </div>
+        </div>
+        
+        <!-- Background -->
+        <div class="position-absolute top-0 end-0 w-50 h-100 bg-position-center bg-repeat-0 bg-size-cover d-none d-xl-block" style="background-image: url(assets/img/account/signin-bg.jpg);"></div>
+      </section>
+    </main>
+
+
+    <!-- Back to top button -->
+    <a href="#top" class="btn-scroll-top" data-scroll>
+      <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+      <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+    </a>

@@ -1,0 +1,75 @@
+
+    
+    <div class="background-image"></div>
+
+    <main class="page-wrapper">
+
+      <div class="content-container position-relative">
+        <div class="container-frame">
+      <app-navbar></app-navbar>
+
+      <!-- Page content -->
+      <section class="position-relative h-100 pt-5 pb-4">
+
+        <!-- Sign up form -->
+        <div class="container d-flex flex-wrap justify-content-center justify-content-xl-start h-100 pt-5">
+          <div class="w-100 align-self-end pt-1 pt-md-4 pb-4" style="max-width: 526px;">
+            <h1 class="text-center text-xl-start animate__animated animate__zoomIn "  >Create Account</h1>
+            <p class="text-center text-xl-start pb-3 mb-3 animate__animated animate__zoomIn ">Already have an account? <a href="account-signin.html">Sign in here.</a></p>
+            <form class="needs-validation" novalidate>
+              <div class="row">
+              </div>
+              <div class="mb-4 animate__animated animate__zoomIn">
+                Continue as             
+               </div>
+               <!-- Container for the role selection -->
+<div class="role-selection">
+  <!-- Manufacturer button -->
+  <button (click)="navigateToManufacturerSignup()" class="role-button manufacturer animate__animated animate__zoomIn">
+    <div class="role-icon">
+      <!-- Include the Manufacturer icon here -->
+      <img src="assets/img/landing/saas-3/feature-3/makerLugo.png" alt="Manufacturer">
+
+    </div>
+    <div class="role-info">
+      <div class="role-title">Manufacturer</div>
+      <div class="role-description">Register & Get listed & Utilize our tools to grow your manufacturing business.</div>
+    </div>
+  </button>
+
+  <!-- Customer button -->
+  <button (click)="navigateToCustomerSignup()" class="role-button customer animate__animated animate__zoomIn">
+    <div class="role-icon">
+      <!-- Include the Customer icon here -->
+      <img src="assets/img/landing/saas-3/feature-3/clientLugo.png" alt="Customer">
+    </div>
+    <div class="role-info">
+      <div class="role-title">Customer</div>
+      <div class="role-description">Upload your file and get the best quotation from our partners</div>
+    </div>
+  </button>
+</div>
+
+</form>
+          </div>
+          <div class="w-100 align-self-end animate__animated animate__zoomIn">
+            <p class="nav d-block fs-xs text-center text-xl-start pb-2 mb-0">
+              &copy; All rights reserved. Made by 
+              <a class="nav-link d-inline-block p-0" href="https://createx.studio/" target="_blank" rel="noopener">Createx Studio</a>
+            </p>    
+          </div>
+        </div>
+        
+        <!-- Background -->
+      </section>
+    </div>
+  </div>
+
+    </main>
+
+
+    <!-- Back to top button -->
+    <a href="#top" class="btn-scroll-top" data-scroll>
+      <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+      <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+    </a>

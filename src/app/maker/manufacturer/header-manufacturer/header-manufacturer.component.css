@@ -1,0 +1,10 @@
+#sectionWithButton {
+    margin-top: 60px; /* Ajustez cette valeur selon votre besoin */
+}
+.textcouleur{
+    background-image: linear-gradient(to left, rgb(71, 21, 236), rgb(216, 16, 200), rgb(100, 85, 151), blue, indigo, rgb(31, 12, 202), indigo);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        color: transparent;
+}

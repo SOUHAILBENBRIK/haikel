@@ -1,0 +1,43 @@
+.profile-container {
+  position: relative;
+  width: 150px; /* Assurez-vous que la largeur et la hauteur sont les mêmes pour un cercle parfait */
+  height: 150px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Ajouté pour centrer verticalement */
+}
+
+.profile-image {
+  width: 65%; 
+  height: 90%; 
+  object-fit: cover; 
+  object-position: center; 
+  border-radius: 50%; 
+  border: 3px solid #ffffff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+  object-position: top center; 
+
+}
+
+
+
+.dropzone {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none; /* Enlever la bordure si nécessaire */
+  background: rgba(255, 255, 255, 0); /* Transparent */
+  cursor: pointer;
+}
+
+.btn-refresh {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translate(50%, 50%); /* Ajuster selon le design */
+  /* Autres styles pour le bouton ici */
+}
+

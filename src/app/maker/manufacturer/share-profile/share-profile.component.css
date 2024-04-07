@@ -1,0 +1,67 @@
+/* Assurez-vous que les boutons ne se collent pas sur les petits écrans */
+.btn {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  
+  /* Espacement sur petits écrans */
+  @media (max-width: 768px) {
+    .input-group, .btn {
+      width: 100%;
+    }
+  }
+  .spaced-btn {
+    margin-right: 10px; /* Ajustez cette valeur selon votre besoin */
+}
+.button-container {
+    margin-top: -40px;
+    margin-left: -10px; /* Ajustez cette valeur selon votre besoin */
+}
+.btn-outline-primary {
+    border-color: #007bff;
+    color: #007bff;
+  }
+  .btn-outline-primary:hover {
+    background-color: #007bff;
+    color: white;
+  }
+  
+
+  .input-group .input-group-append .btn {
+    padding: 0.25rem; /* Uniform padding for a circle; might adjust if the icon is too big or too small */
+    font-size: 0.875rem; /* This might need to be smaller depending on the size of your button */
+    line-height: 1;
+    border: none;
+    background-color: rgb(255, 255, 255);
+    outline: none; /* Remove focus outline */
+    box-shadow: none; /* Remove any box-shadow if it exists */
+    position: absolute;
+    right: 0;
+    top: 50%; /* Align the button to the center of the parent vertically */
+    transform: translateY(-50%); /* Offset the button by half of its height for perfect vertical centering */
+    z-index: 2;
+    height: 2rem; /* Set a fixed height */
+    width: 2rem; /* Make the width the same as the height for a circle */
+    border-radius: 50%; /* This makes the button round */
+  }
+  
+  .input-group .input-group-append .btn .bx {
+    font-size: 1rem; /* Adjust the size of the icon to fit within the smaller button */
+    line-height: 1; /* Adjust line height for vertical alignment of the icon */
+  }
+  
+  /* Update the input field padding to ensure text does not overlap with the circular button */
+  .form-control {
+    padding-right: 2.5rem; /* Make sure this right padding accounts for the circular button */
+  }
+  
+  .input-group {
+    position: relative;
+  }
+  .textcouleur{
+    background-image: linear-gradient(to left, rgb(71, 21, 236), rgb(216, 16, 200), rgb(100, 85, 151), blue, indigo, rgb(31, 12, 202), indigo);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        color: transparent;
+}

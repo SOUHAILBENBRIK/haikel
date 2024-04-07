@@ -1,0 +1,70 @@
+@keyframes swing {
+    0%, 100% {
+      transform: rotateY(-5deg);
+    }
+    50% {
+      transform: rotateY(5deg);
+    }
+  }
+  button {
+    box-shadow: 0 0 5px cyan,
+    0 0 25px rgb(0, 0, 255);
+  }
+  button:hover {
+    box-shadow:  0 0 5px cyan,
+    0 0 25px cyan, 0 0 50px rgb(4, 0, 255),
+    0 0 100px cyan, 0 0 200px cyan;
+  }
+
+  .swinging {
+    animation: swing 5s ease-in-out infinite;
+    transform-origin: center; /* Assurez-vous que la rotation se fait autour du centre de l'élément */
+  }
+  
+  .swinging {
+    animation: swing 5s ease-in-out infinite;
+    transform-origin: center; /* Assurez-vous que la rotation se fait autour du centre de l'élément */
+  }
+  
+  
+  .list-unstyled li {
+    position: relative;
+    padding-left: 30px; /* Espacement pour l'icône */
+    margin-bottom: 10px; /* Espacement entre les éléments */
+    list-style-type: none; /* Retirer le style de liste par défaut */
+    line-height: 1.5; /* Hauteur de ligne pour l'espacement vertical */
+    font-size: 16px; /* Taille de police pour la liste */
+  }
+  
+  .list-unstyled li::before {
+    content: '\2713'; /* Caractère Unicode pour la coche */
+    position: absolute;
+    left: 0; /* Position de l'icône à gauche */
+    color: #28a745; /* Couleur verte pour l'icône de coche */
+    font-weight: bold; /* Rendre l'icône de coche plus visible */
+  }
+  
+  /* Ajout de media queries si nécessaire pour l'adaptation mobile */
+  @media (max-width: 768px) {
+    .list-unstyled li {
+      font-size: 14px; /* Taille de police plus petite pour les appareils mobiles */
+    }
+  }
+  
+  ul.text-body {
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul.text-body li {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 5px; /* espace entre les éléments */
+    margin-bottom: 5px; /* espace entre les éléments */
+    white-space: nowrap;
+
+
+}

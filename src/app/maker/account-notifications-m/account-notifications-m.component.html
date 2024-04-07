@@ -1,0 +1,87 @@
+
+
+   
+  <main>
+    <section class="container-fluid pt-5">
+      <div class="row">
+  
+        <!-- Aside column -->
+        <div class="col-md-4" style="margin-top: 30px;">
+          <app-aside></app-aside>
+        </div>
+  
+        <!-- Account details column -->
+        <div class="col-md-6">
+          <div class="py-md-4">
+            <form class="ps-md-3 ps-lg-0 mt-md-2 pt-md-4 pb-md-2">
+              <div class="d-flex align-items-center justify-content-between pt-xl-1 mb-3 pb-3">
+                <h1 class="h2 mb-0">Notifications</h1>
+                <button type="button" class="btn btn-outline-danger px-3 px-sm-4">
+                  <i class="bx bx-bell-off fs-xl me-sm-1"></i>
+                  <span class="d-none d-sm-inline">Pause all notifications</span>
+                </button>
+              </div>
+              <div class="row align-items-end pb-3 mb-2 mb-sm-4">
+                <div class="col-lg-6 col-sm-7">
+                  <label for="notifications-email" class="form-label fs-base">Preferred email</label>
+                  <select id="notifications-email" class="form-select form-select-lg">
+                    <option value="jonny@email.com">jonny@email.com</option>
+                    <option value="john_doe@email.com">john_doe@email.com</option>
+                  </select>
+                </div>
+                <div class="col-lg-6 col-sm-5">
+                  <button type="button" class="btn btn-link btn-lg px-0">
+                    <i class="bx bx-plus fs-xl me-2"></i>
+                    Add new email
+                  </button>
+                </div>
+              </div>
+              <div class="form-check form-switch form-switch-success d-flex mb-4">
+                <input type="checkbox" id="activity" class="form-check-input flex-shrink-0" checked>
+                <label for="activity" class="form-check-label ps-3">
+                  <span class="h6 d-block mb-2">Activity updates</span>
+                  <span class="fs-sm text-muted">Nec, posuere non felis duis massa vitae aliquet interdum scelerisque. Neque ullamcorper.</span>
+                </label>
+              </div>
+              <div class="form-check form-switch form-switch-success d-flex mb-4">
+                <input type="checkbox" id="letters" class="form-check-input flex-shrink-0">
+                <label for="letters" class="form-check-label ps-3">
+                  <span class="h6 d-block mb-2">Info letters from our partners</span>
+                  <span class="fs-sm text-muted">Tortor massa porttitor enim tristique neque fermentum sed.</span>
+                </label>
+              </div>
+              <div class="form-check form-switch form-switch-success d-flex mb-4">
+                <input type="checkbox" id="account" class="form-check-input flex-shrink-0" checked>
+                <label for="account" class="form-check-label ps-3">
+                  <span class="h6 d-block mb-2">Account activity</span>
+                  <span class="fs-sm text-muted">Maecenas aenean porta sit integer a duis commodo massa pulvinar.</span>
+                </label>
+              </div>
+              <div class="form-check form-switch form-switch-success d-flex mb-4">
+                <input type="checkbox" id="promoions" class="form-check-input flex-shrink-0">
+                <label for="promoions" class="form-check-label ps-3">
+                  <span class="h6 d-block mb-2">Promotions, recommendations &amp; helpful resources</span>
+                  <span class="fs-sm text-muted">Aliquam sagittis fames pharetra placerat tempus. Volutpat orci neque elit malesuada mauris neque, tempus.</span>
+                </label>
+              </div>
+              <div class="form-check form-switch form-switch-success d-flex mb-4">
+                <input type="checkbox" id="summary" class="form-check-input flex-shrink-0">
+                <label for="summary" class="form-check-label ps-3">
+                  <span class="h6 d-block mb-2">Daily summary emails</span>
+                  <span class="fs-sm text-muted">Condimentum nunc, massa, nibh maecenas bibendum morbi neque.</span>
+                </label>
+              </div>
+              <div class="d-flex pt-3 mb-3">
+                <button type="reset" class="btn btn-secondary me-3">Restore</button>
+                <button type="submit" class="btn btn-primary">Save changes</button>
+              </div>
+            </form>
+
+         
+  
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  

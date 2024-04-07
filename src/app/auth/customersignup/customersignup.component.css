@@ -1,0 +1,9 @@
+.password-toggle-indicator {
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    /* Et tout autre style nécessaire pour votre icône */
+  }
+  

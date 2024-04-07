@@ -1,0 +1,135 @@
+.role-selection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Space between buttons */
+    
+  }
+  
+  /* Ajoutez cette règle pour définir la couleur de fond et d'autres propriétés pour les boutons */
+.role-button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    width: 100%; /* La largeur totale peut être ajustée en fonction de votre design */
+    margin-bottom: 10px; /* Espacement entre les boutons */
+    border-radius: 10px; /* Coins arrondis */
+    background-color: #f0f0f0; /* Couleur de fond de bouton */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 0.9rem;
+    border: none;
+    transition: all 0.3s ease;
+    color: transparent; /* Texte transparent pour voir le dégradé */
+    border: 2px solid white; /* Bordure blanche */
+    box-sizing: border-box; /* Assurez-vous que la bordure est incluse dans la largeur/hauteur */
+
+
+  }
+  
+  .role-button:hover {
+    box-shadow: 0 0 5px rgba(238, 0, 255, 0.474), /* Ombre cyan */
+                0 0 25px rgba(255, 0, 247, 0.376), /* Ombre cyan */
+                0 0 50px rgba(234, 0, 255, 0.364), /* Ombre bleue */
+                0 0 100px rgba(221, 0, 255, 0.312), /* Ombre cyan */
+                0 0 200px rgba(247, 0, 255, 0.233); /* Ombre cyan */
+}
+  
+  /* Style pour les icônes */
+  .role-icon img {
+    width: 80px; /* Ajustez cette valeur pour la taille de l'icône */
+    height: 80px; /* Ajustez cette valeur pour la taille de l'icône */
+    margin-right: 20px; /* Espace entre l'icône et le texte */
+
+  }
+  
+  /* Style pour le titre et la description */
+  .role-info .role-title {
+    font-size: 1.2rem; /* Taille du texte pour le titre */
+    font-weight: bold;
+    color: #333; /* Couleur du texte pour le titre */
+  }
+  
+  .role-info .role-description {
+    font-size: 0.9rem; /* Taille du texte pour la description */
+    color: #666; /* Couleur du texte pour la description */
+    font-weight: bold; /* Met le texte en gras */
+}
+
+  .role-info .role-title {
+    background-image: linear-gradient(to left, rgb(71, 21, 236), rgb(216, 16, 200), rgb(100, 85, 151), blue, indigo, rgb(31, 12, 202), indigo);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+  
+  
+  
+  /* Couleurs spécifiques pour chaque bouton */
+  .manufacturer {
+    background-color:linear-gradient(to left, rgb(71, 21, 236), rgb(216, 16, 200), rgb(100, 85, 151), blue, indigo, rgb(31, 12, 202), indigo);
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .customer {
+    background-image: linear-gradient(to left, rgb(71, 21, 236), rgb(216, 16, 200), rgb(100, 85, 151), blue, indigo, rgb(31, 12, 202), indigo);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        color: transparent;
+  }
+  /* Conteneur pour l'image de fond */
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('src/assets/img/account/signin-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1; /* Assurez-vous que l'image est en arrière-plan */
+}
+
+/* Conteneur pour le contenu */
+.content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #FFF0F5; 
+    position: relative; /* Assurez-vous que la position est définie sur relative */
+    left: -40px; /* Décalage de 20px vers la gauche */
+   
+
+
+
+}
+.page-wrapper{
+    position: relative; /* Assurez-vous que la position est définie sur relative */
+    left: -150px; /* Décalage de 20px vers la gauche */
+
+}
+h1 {
+    color: #FFF0F5; /* Couleur du texte pour le titre */
+}
+.text-center{
+    background-image: linear-gradient(to left, rgb(71, 21, 236), rgb(216, 16, 200), rgb(100, 85, 151), blue, indigo, rgb(31, 12, 202), indigo);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        color: transparent;
+}
+
+
+
+
+
+
+  

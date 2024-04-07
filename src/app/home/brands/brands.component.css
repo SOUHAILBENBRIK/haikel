@@ -1,0 +1,14 @@
+@media (min-width: 1100px) {
+    .swiper-container {
+      flex-wrap: nowrap !important;
+    }
+    .swiper-slide {
+      flex-basis: auto !important;
+      width: auto !important;
+      max-width: none !important;
+    }
+    .swiper-wrapper {
+      align-items: center !important;
+    }
+  }
+  

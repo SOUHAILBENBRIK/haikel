@@ -1,0 +1,118 @@
+.container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.toggle-switch {
+    display: flex;
+    align-items: center;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin: 0 10px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider {
+    border-radius: 34px;
+}
+
+.slider:before {
+    border-radius: 50%;
+}
+
+.option {
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Hide 'no' or 'yes' text based on checkbox status */
+input:checked ~ .option:nth-of-type(1),
+input:not(:checked) ~ .option:nth-of-type(2) {
+    display: none;
+}
+.step {
+    height: 210px; /* Définissez la hauteur souhaitée */
+  }
+/* Dans votre fichier CSS */
+.custom-margin {
+    margin-top: 20rem; /* ou la valeur spécifique dont vous avez besoin */
+}
+/* Style pour 'Delete Picture' */
+.delete-picture {
+    color: #ff0000; /* Rouge */
+    font-size: 0.8rem; /* Petite taille de police */
+    text-decoration: none; /* Enlève le soulignement par défaut des liens */
+    cursor: pointer; /* Change le curseur au survol */
+}
+
+.delete-picture:hover {
+    text-decoration: underline; /* Ajoute un soulignement au survol pour indiquer que c'est cliquable */
+}
+/* Ajoutez une classe personnalisée à votre formulaire ou utilisez une classe existante */
+.needs-validation {
+    margin-top: 2rem; /* Ajustez cette valeur selon l'espace souhaité */
+}
+
+/* Si vous voulez ajouter de l'espace en bas du contenu précédant le formulaire */
+.wideget-user-desc {
+    margin-bottom: 2rem; /* Ajustez cette valeur selon l'espace souhaité */
+}
+
+.text-center{
+    background-image: linear-gradient(to left, rgb(71, 21, 236), rgb(216, 16, 200), rgb(100, 85, 151), blue, indigo, rgb(31, 12, 202), indigo);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        color: transparent;
+}

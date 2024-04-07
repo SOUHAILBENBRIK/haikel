@@ -1,0 +1,73 @@
+.swiper-slide {
+    width: 33.333333%;
+    margin-right: 20px; /* Ajouter un espace entre les éléments */
+    display: flex; /* Utiliser flexbox pour le centrage */
+    flex-direction: column; /* Organiser les enfants en colonne */
+    align-items: center; /* Centrer les enfants horizontalement */
+    justify-content: center; /* Centrer les enfants verticalement */
+    background: #dedeee; /* Couleur de fond pour chaque élément */
+    border-radius: 10px; /* Ajouter un peu de rayon aux coins */
+    padding: 20px; /* Ajouter du padding autour du contenu */
+}
+/* Assurez-vous que l'image, le titre, la liste et le bouton ont une hauteur cumulée cohérente */
+.swiper-slide img {
+    max-height: 150px; /* Hauteur maximale pour l'image */
+    margin-bottom: 15px; /* Espace entre l'image et le texte en dessous */
+}
+.swiper-slide h3 {
+    min-height: 48px; /* Hauteur minimale pour le titre, ajustez selon le besoin */
+}
+
+.swiper-slide ul {
+    min-height: 96px; /* Hauteur minimale pour la liste, ajustez selon le besoin */
+}
+
+
+.swiper-slide {
+    flex: 0 0 auto;
+}
+.swiper-wrapper {
+    display: flex; /* Utiliser flexbox */
+    flex-wrap: nowrap; /* Empêcher le retour à la ligne */
+    justify-content: space-around;
+
+}
+.btn-link {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+}
+
+/* Pour éviter un espace après le dernier élément */
+.swiper-slide:last-child {
+    margin-right: 0;
+}
+
+.diminuer-image {
+    width: 150px; /* Définissez la largeur souhaitée */
+    height: auto; /* Maintient les proportions de l'image */
+    display: block; /* Pour utiliser les propriétés de centrage */
+    margin: auto; /* Centre horizontalement */
+    position: relative; /* Nécessaire pour le centrage vertical */
+}
+/* Assurez-vous que les swiper-slide aient la même hauteur */
+.swiper-container {
+    align-items: stretch; /* Étirez les slides pour remplir l'espace vertical */
+}
+
+/* Correction si vous avez des marges incohérentes entre les éléments */
+.swiper-slide .pt-4 {
+    margin-top: 0; /* Réinitialisez la marge supérieure si nécessaire */
+}
+.image-cnc {
+    margin-top: 45px; /* Ajustez cette valeur pour positionner l'image plus bas */
+
+}
+.image-3d {
+    margin-top: 10px; /* Ajustez cette valeur pour positionner l'image plus bas */
+
+}
+.background-image-3d {
+    background-image: url('../../../assets/img/background/backblanc.jpg');
+    background-size: cover; /* Couvrir l'intégralité de l'espace */
+}

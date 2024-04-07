@@ -1,0 +1,237 @@
+
+.content-container {
+    padding-top: 100px;
+  }
+
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .stat-card {
+    background-color: #E6F4FF;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 20%; /* Adjust the width as needed */
+    position: relative; /* For the pseudo-element positioning */
+  }
+
+  .stat-card:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 2px;
+    background-color: #000;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #0000FF;
+    margin-bottom: 5px;
+  }
+
+  .stat-title {
+    font-size: 1rem;
+    color: #000;
+    text-transform: uppercase;
+  }
+  .filter-tabs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  
+  .tab {
+    background-color: #E6F4FF;
+    border: none;
+    padding: 10px 20px; /* Keep your padding */
+   margin-right: 5px; /* Keep your margin between buttons */
+   border-radius: 5px; /* Your desired border-radius */
+   border: 5px solid #007bff; /* Ajoutez la bordure bleue ici */
+
+  }
+  .tab:hover {
+    background-color: #D0E2FF !important; /* Color change on hover */
+  }
+  .tab.active {
+    background-color: #D0E2FF;
+  }
+  
+  .search-bar {
+    display: flex;
+  }
+  
+  .search-bar input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .search-button {
+    padding: 10px;
+    border: none;
+    background-color: #E6F4FF;
+    cursor: pointer;
+  }
+  
+  .table-container {
+    margin-top: 20px;
+  }
+  
+  table {
+    width: 100%;
+  }
+
+  /* Existing styles... */
+
+  .search-bar {
+    display: flex;
+    align-items: center; /* Pour aligner les éléments verticalement */
+    width: 31%; /* Ajustez la largeur selon vos besoins */
+}
+
+.search-button {
+    margin-left: 10px; /* Ajoute un espace entre le champ de recherche et le bouton */
+}
+.btn {
+    border-radius: 50%; /* Makes the button round */
+    width: 40px; /* Specifies the width */
+    height: 40px; /* Specifies the height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 4px; /* Adds space between the buttons */
+  }
+  
+  /* Specific button colors */
+  .btn-primary {
+    background-color: blue; /* Replace with the exact color code you need */
+    border: none; /* Removes the border */
+  }
+  
+  .btn-info {
+    background-color: lightblue; /* Replace with the exact color code you need */
+    border: none;
+  }
+  
+  .btn-secondary {
+    background-color: lightgrey; /* Replace with the exact color code you need */
+    border: none;
+  }
+  
+  /* Styling the FontAwesome icons */
+  .btn i {
+    color: white; /* Sets the icon color */
+  }
+  
+  .background-image-3d {
+    min-height: 100vh; /* 100% of the viewport height */
+    background-size: cover; /* Cover the entire size of the element */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+  }
+  
+  .buttonA {
+    box-shadow: 0 0 5px cyan,
+    0 0 25px rgb(0, 0, 255);
+  }
+  .button:hover {
+    box-shadow:  0 0 5px cyan,
+    0 0 25px cyan, 0 0 50px rgb(4, 0, 255),
+    0 0 100px cyan, 0 0 200px cyan;
+  }
+
+  .stats-container {
+    display: flex;
+    justify-content: center; /* This centers the .stat-card elements horizontally */
+    gap: 70px; /* Adjust this value to increase or decrease the space between the cards */
+  }
+  .textcolor{
+    background-image: linear-gradient(to left, rgb(71, 21, 236), rgb(216, 16, 200), rgb(100, 85, 151), blue, indigo, rgb(31, 12, 202), indigo);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        color: transparent;
+}
+
+.button-hover {
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition pour l'effet hover */
+  }
+  
+  .button-hover:hover {
+    background-color: #007bff; /* La couleur de fond que vous voulez lors du survol */
+    color: rgb(33, 11, 231); /* Change la couleur du texte si nécessaire */
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.5); /* Ajout d'une ombre externe bleutée pour la luminosité */
+  }
+  .text-center {
+    text-align: left; /* Alignement à gauche */
+    background-image: linear-gradient(to left, rgb(71, 21, 236), rgb(216, 16, 200), rgb(100, 85, 151), blue, indigo, rgb(31, 12, 202), indigo);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+
+.textcolor1{
+  background-image: linear-gradient(to left, rgb(71, 21, 236), rgb(28, 10, 185), rgb(12, 12, 207), blue, rgb(16, 19, 210), rgb(31, 12, 202), indigo);
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      background-clip: text;
+      color: rgb(25, 0, 255);
+}
+.material-select-container {
+  position: relative;
+  display: block; /* ou 'flex' si vous préférez */
+}
+.add-material-button {
+  position: absolute;
+  right: 0; /* Décalez légèrement vers la gauche si nécessaire */
+  top: 50%; /* Démarre à 50% du haut du conteneur */
+  transform: translateY(-50%); /* Centre le bouton verticalement */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-material-button button {
+  border: 1px solid #007bff; /* Couleur de bordure */
+  background-color: #fff; /* Fond blanc */
+  border-radius: 50%; /* Bouton rond */
+  width: 1.5rem; /* Taille réduite du bouton */
+  height: 1.5rem; /* Taille réduite du bouton */
+  font-size: 1rem; /* Taille de la police ajustée si nécessaire */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.5rem; /* Espace ajouté pour décaler vers la gauche */
+}
+
+.form-select {
+  padding-right: 2rem; /* Réduit l'espace pour le bouton si le bouton est plus petit */
+}
+.textcolorBlue{
+  background-image: linear-gradient(to left, rgb(71, 21, 236), rgb(28, 10, 185), rgb(12, 12, 207), blue, rgb(16, 19, 210), rgb(31, 12, 202), rgb(49, 12, 234));
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      background-clip: text;
+      color: rgb(25, 0, 255);
+}
+
+.textcolorRed{
+  background-image: linear-gradient(to left, rgb(236, 7, 7), rgb(235, 12, 30), rgb(247, 12, 19), rgb(228, 6, 6), rgb(245, 6, 10), rgb(246, 6, 42), rgb(230, 4, 8));
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      background-clip: text;
+      color: rgb(231, 0, 35);
+}

@@ -1,0 +1,47 @@
+main {
+    padding-top: 70px; /* Adjust this value based on the height of your navbar */
+    background-image: url('/assets/img/background/imgback.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .buttonA {
+    box-shadow: 0 0 5px cyan,
+    0 0 25px rgb(0, 0, 255);
+  }
+  button:hover {
+    box-shadow:  0 0 5px cyan,
+    0 0 25px cyan, 0 0 50px rgb(4, 0, 255),
+    0 0 100px cyan, 0 0 200px cyan;
+  }
+
+  .buttonB {
+    box-shadow: 0 0 5px rgb(84, 88, 88), 0 0 25px rgb(93, 93, 97);
+  }
+  
+  button:hover {
+    box-shadow: 0 0 5px rgba(86, 88, 88, 1),
+                0 0 25px rgba(0, 255, 255, 1), /* cyan plus lumineux */
+                0 0 50px rgba(4, 0, 255, 1), /* bleu moins transparent */
+                0 0 100px rgba(0, 255, 255, 1), /* cyan plus lumineux */
+                0 0 200px rgba(0, 255, 255, 0.8); /* cyan un peu plus transparent */
+  }
+  
+  .custom-link {
+    /* Ajoutez ici vos styles personnalisés */
+    color: #007bff; /* Couleur du texte */
+    text-decoration: none; /* Enlever la décoration du lien */
+    font-weight: bold; /* Gras */
+    font-size: 18px; /* Taille de la police */
+    /* Autres styles personnalisés selon vos besoins */
+}
+
+.custom-link:hover {
+    /* Styles au survol */
+    text-decoration: underline; /* Souligner le texte au survol */
+}
+
+
+
+

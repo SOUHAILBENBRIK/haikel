@@ -1,0 +1,565 @@
+<div class="background-image-3d "   style="padding-top: 100px;">
+    <h2 class=" container text-center">Machines and materials</h2>
+
+    <div class="stats-container">
+        
+      <div class="stat-card buttonA" style="border: 1px solid #007bff;">
+        
+        <div class="stat-number">{{ totalMachinesCount }}</div>
+        <div class="stat-title textcolor">All</div>
+      </div>
+      <div class="stat-card buttonA" style="border: 1px solid #007bff;">
+        <div class="stat-number">{{ troisPrintingCount }}</div>
+        <div class="stat-title textcolor">3D printers</div>
+      </div>
+      <div class="stat-card buttonA" style="border: 1px solid #007bff;">
+        <div class="stat-number">{{ cncMachinesCount }}</div>
+        <div class="stat-title textcolor">CNC machines</div>
+      </div>
+      <div class="stat-card buttonA" style="border: 1px solid #007bff;">
+        <div class="stat-number">{{ laserCuttingCount }}</div>
+        <div class="stat-title textcolor">Sheet metal</div>
+      </div>
+    </div>
+
+
+    <div class="filter-tabs">
+        <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-10">
+               <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <button class="tab textcolor button-hover  "  data-bs-toggle="modal" data-bs-target="#exampleModal"  style="border: 1px solid #007bff;">ADD NEW MACHINE</button>
+                        <button class="tab textcolor button-hover"  data-bs-toggle="modal" data-bs-target="#exampleModalMachine" style="border: 1px solid #007bff;">ADD NEW MATERIAL</button>
+                        <button class="tab textcolor button-hover"  data-bs-toggle="modal" data-bs-target="#exampleModalFinishes" style="border: 1px solid #007bff;">ADD FINISHES</button>
+                      </div>
+                      
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+        <div class="search-bar" >
+          <input type="text" placeholder="Search for machine" [(ngModel)]="searchTerm" (keyup)="searchTermChange($event)" style="border: 1px solid #007bff;">
+          <button class=" tab search-button" style="border: 1px solid #007bff;">🔍</button>
+        </div>
+      </div>
+
+
+  <div class="row justify-content-center">
+    <div class="col-lg-10">
+      <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead>
+            <tr>
+              <th>Machine</th>
+              <th>Price per hour</th>
+              <th>Process</th>
+              <th>Materials</th>
+              <th>Actions</th>
+            
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr *ngFor="let machine of machines | filter: searchTerm : 'name' | paginate: { itemsPerPage: pageSize, currentPage: currentpage }; let i=index">
+              <td>{{ machine.name }}</td> <!-- Adaptez ces lignes selon les propriétés de votre IMachine -->
+              <td>{{ machine.pricePerHour }}</td>
+              <td>{{ machine.process }}</td>
+              <td>{{ machine.materials.join(', ') }}</td> <!-- Suppose que materials est un tableau de chaînes -->
+              <td>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalLabelUpdate" (click)="prepareUpdate(machine)">
+                    <i class='bx bxs-edit-alt'></i>
+                  </button>
+                  
+                  <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModalConfirm" (click)="prepareDelete(machine.idMachine)" >
+                    <i class='bx bx-trash'></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+          
+        </table>
+      </div>
+      <pagination-controls (pageChange)="currentpage = $event"></pagination-controls>
+
+    </div>
+  </div>
+
+
+    
+    
+    </div>
+
+    
+<!-- add Modal For Machine -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title textcolor" id="exampleModalLabel" >New machine</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+      </div>
+      <h6 class="modal-title textcolor " id="exampleModalLabel" >machine Info</h6>
+
+      <div class="modal-body">
+
+        <form (ngSubmit)="addNewMachine()">
+
+          <div class="form-group">
+
+            <div class="col-12">
+              <label for="specialist" class="form-label ">Services</label>
+              <select class="form-select " id="process" [(ngModel)]="newMachine.process" name="process" required>
+                <option value="" selected disabled>Choose a process</option>
+                <option value="TROIS_PRINTING">3D Printing</option>
+                <option value="CNC_MACHINING">CNC Machining</option>
+                <option value="LASER_CUTTING">Laser cutting</option>
+                
+              </select>
+              <div class="invalid-feedback">Choose a specialist from the list!</div>
+            </div>
+
+            <div class="col-12" *ngIf="newMachine.process === 'TROIS_PRINTING'">
+              <label for="specialist" class="form-label ">Select a service</label>
+              <select class="form-select " id="troisPrinting" [(ngModel)]="newMachine.troisPrinting" name="troisPrinting" required>
+                <option value="" selected disabled>Choose a troisPrinting</option>
+                <option value="FDM">FDM</option>
+                <option value="SLA">SLA</option>
+                <option value="MJF">MJF</option>
+                
+              </select>
+              <div class="invalid-feedback">Choose a specialist from the list!</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label "  for="prenomE">Machine</label>
+            <input type="text" class="form-control" placeholder=" Name for Machine" [(ngModel)]="newMachine.name" name="machineName">
+          </div>
+
+          <label for="specialist" class="form-label ">Travel/mm</label>
+
+            <div class="row justify-content-start">
+              <!-- Travel Input -->
+              <div class="col-md-4 travel-input">
+                <!-- X-Travel Input -->
+                <div class="input-group">
+                  <span class="input-group-text textcolor">X</span>
+                  <input type="number" class="form-control" placeholder="Enter X-Travel/mm" [(ngModel)]="newMachine.travelPerX" name="xTravel">
+                </div>
+              </div>
+          
+              <!-- Y-Travel Input -->
+              <div class="col-md-4 travel-input">
+                <!-- Y-Travel Input -->
+                <div class="input-group">
+                  <span class="input-group-text textcolor">Y</span>
+                  <input type="number" class="form-control" placeholder="Enter Y-Travel/mm" [(ngModel)]="newMachine.travelPerY" name="yTravel">
+                </div>
+              </div>
+          
+              <!-- Z-Travel Input -->
+              <div class="col-md-4 travel-input">
+                <!-- Z-Travel Input -->
+                <div class="input-group">
+                  <span class="input-group-text textcolor ">Z</span>
+                  <input type="number" class="form-control" placeholder="Enter Z-Travel/mm" [(ngModel)]="newMachine.travelPerZ" name="zTravel">
+                </div>
+              </div>
+            </div>
+          
+          <label class="form-label " for="zTravel">Price per hour</label>
+          <div class="input-group">
+            <input type="number" class="form-control" placeholder="Price per hour" [(ngModel)]="newMachine.pricePerHour" name="pricePerHour">
+           
+          </div>
+
+          <label for="currency" class="form-label">Currency</label>
+          <select class="form-select " id="currency" [(ngModel)]="newMachine.currency" name="currency" required>
+            <option value="" selected disabled>Choose a currency</option>
+            <ng-container *ngFor="let currency of currencies">
+              <option [value]="currency">{{ currency }}</option>
+            </ng-container>
+          </select>
+          <h5 class="modal-title textcolor mt-2" id="exampleModalLabel" >Selected material</h5>
+
+          <label for="materials" class="form-label mt-2 ">Add your material. Our database includes 200+ pre-filled materials with settings</label>
+          <select class="form-select" [(ngModel)]="newMachine.materials" name="materials" required>
+            <option *ngFor="let material of materials" [value]="material">{{ material }}</option>
+          </select>
+          <!--
+                <ng-select  class="custom " [items]="materials"
+                     bindLabel="material"
+                     bindValue="material"
+                     [(ngModel)]="newMachine.materials"
+                     name="materials"
+                     [addTag]="true"
+                     addTagText="Add item"
+                     placeholder="Select or type">
+          </ng-select>
+          
+          -->
+          
+          
+          
+        
+          <button type="submit" class="tab textcolor button-hover col-12 mt-3" style="border: 1px solid #007bff;">Add Machine</button>
+
+
+
+        
+
+        
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- Fin du Modal -->
+
+
+
+
+<!--update machine Modal-->
+   <div class="modal fade" id="exampleModalLabelUpdate" tabindex="-1" aria-labelledby="exampleModalLabelUpdate" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title textcolor" id="exampleModalLabelUpdate" > Update Machine</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+      </div>
+      <h6 class="modal-title textcolor " id="exampleModalLabelUpdate" >machine Info</h6>
+
+      <div class="modal-body">
+
+  <form (ngSubmit)="submitMachineForm()">
+
+          <div class="form-group">
+
+            <div class="col-12">
+              <label for="specialist" class="form-label ">Services</label>
+              <select class="form-select " id="process" [(ngModel)]="currentMachine.process" name="process" required>
+                <option value="" selected disabled>Choose a process</option>
+                <option value="TROIS_PRINTING">3D Printing</option>
+                <option value="CNC_MACHINING">CNC Machining</option>
+                <option value="LASER_CUTTING">Laser cutting</option>
+                
+              </select>
+              <div class="invalid-feedback">Choose a specialist from the list!</div>
+            </div>
+
+            <div class="col-12" *ngIf="currentMachine.process === 'TROIS_PRINTING'">
+              <label for="specialist" class="form-label ">Select a service</label>
+              <select class="form-select " id="troisPrinting" [(ngModel)]="currentMachine.troisPrinting" name="troisPrinting" required>
+                <option value="" selected disabled>Choose a troisPrinting</option>
+                <option value="FDM">FDM</option>
+                <option value="SLA">SLA</option>
+                <option value="MJF">MJF</option>
+                
+              </select>
+              <div class="invalid-feedback">Choose a specialist from the list!</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label "  for="prenomE">Machine</label>
+            <input type="text" class="form-control" placeholder=" Name for Machine" [(ngModel)]="currentMachine.name" name="machineName">
+          </div>
+
+          <label for="specialist" class="form-label ">Travel/mm</label>
+
+            <div class="row justify-content-start">
+              <!-- Travel Input -->
+              <div class="col-md-4 travel-input">
+                <!-- X-Travel Input -->
+                <div class="input-group">
+                  <span class="input-group-text textcolor">X</span>
+                  <input type="number" class="form-control" placeholder="Enter X-Travel/mm" [(ngModel)]="currentMachine.travelPerX" name="xTravel">
+                </div>
+              </div>
+          
+              <!-- Y-Travel Input -->
+              <div class="col-md-4 travel-input">
+                <!-- Y-Travel Input -->
+                <div class="input-group">
+                  <span class="input-group-text textcolor">Y</span>
+                  <input type="number" class="form-control" placeholder="Enter Y-Travel/mm" [(ngModel)]="currentMachine.travelPerY" name="yTravel">
+                </div>
+              </div>
+          
+              <!-- Z-Travel Input -->
+              <div class="col-md-4 travel-input">
+                <!-- Z-Travel Input -->
+                <div class="input-group">
+                  <span class="input-group-text textcolor ">Z</span>
+                  <input type="number" class="form-control" placeholder="Enter Z-Travel/mm" [(ngModel)]="currentMachine.travelPerZ" name="zTravel">
+                </div>
+              </div>
+            </div>
+          
+          <label class="form-label " for="zTravel">Price per hour</label>
+          <div class="input-group">
+            <input type="number" class="form-control" placeholder="Price per hour" [(ngModel)]="currentMachine.pricePerHour" name="pricePerHour">
+           
+          </div>
+
+          <label for="currency" class="form-label">Currency</label>
+          <select class="form-select " id="currency" [(ngModel)]="currentMachine.currency" name="currency" required>
+            <option value="" selected disabled>Choose a currency</option>
+            <ng-container *ngFor="let currency of currencies">
+              <option [value]="currency">{{ currency }}</option>
+            </ng-container>
+          </select>
+          <h5 class="modal-title textcolor mt-2" id="exampleModalLabel" >Selected material</h5>
+
+          <label for="materials" class="form-label mt-2 ">Add your material. Our database includes 200+ pre-filled materials with settings</label>
+          <select class="form-select" [(ngModel)]="selectedMaterial" (change)="updateMaterialSelection()" name="materials" required>
+            <option *ngFor="let material of materials" [value]="material">{{ material }}</option>
+          </select>
+          
+          <!--
+                <ng-select  class="custom " [items]="materials"
+                     bindLabel="material"
+                     bindValue="material"
+                     [(ngModel)]="newMachine.materials"
+                     name="materials"
+                     [addTag]="true"
+                     addTagText="Add item"
+                     placeholder="Select or type">
+          </ng-select>
+          
+          -->
+          
+          
+          
+        
+          <button type="submit" class="tab textcolor button-hover col-12 mt-3" style="border: 1px solid #007bff;">Update Machine</button>
+
+
+
+        
+
+        
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- Fin du Modal -->
+
+
+
+
+
+<!-- ng-->
+<div class="modal fade" id="exampleModalMachine" tabindex="-1" aria-labelledby="exampleModalMachine" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title textcolor" id="exampleModalMachine" >Add new materials</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+      </div>
+
+      <div class="modal-body">
+
+        <form >
+
+          <div class="form-group">
+
+            <div class="col-12">
+              <label for="process" class="form-label">Select a service</label>
+              <select class="form-select" id="process" [(ngModel)]="newMachine.process" (change)="onProcessChange(newMachine.process)" name="process" required>
+                <option value="" selected disabled>Choose a process</option>
+                <option *ngFor="let process of availableProcesses" [value]="process">{{ process | titlecase }}</option>
+              </select>
+              <div class="invalid-feedback">Choose a specialist from the list!</div>
+            </div>
+            
+
+            
+
+          <!-- Sélecteur de machines -->
+          <label for="machine" class="form-label ">Selected Machine</label>
+            <select class="form-select" id="troisPrinting" [(ngModel)]="selectedMachineId" name="troisPrinting" required>
+             <option value="" selected disabled>Choose a troisPrinting</option>
+            <option *ngFor="let machine of machinesByProcess" [ngValue]="machine.idMachine">{{ machine.name }}</option>
+            </select>
+
+             <div class="invalid-feedback">Choose a machine from the list!</div>
+          </div>
+
+        
+         
+       
+
+         
+          <div class="material-select-container">
+            <h5 class="modal-title textcolor mt-2" id="exampleModalLabel">Matériau sélectionné</h5>
+          
+            <label for="materials" class="form-label mt-2">Ajoutez votre matériau. Notre base de données comprend plus de 200 matériaux prédéfinis avec leurs paramètres</label>
+            <div class="add-material-button" *ngIf="!showCustomMaterialInput">
+              <button type="button"  (click)="showCustomMaterialField()" class="tab textcolor button-hover  mt-3" style="border: 1px solid #007bff;">+</button>
+            </div>
+          
+            <select *ngIf="!showCustomMaterialInput" class="form-select" [(ngModel)]="newMachine.materials" name="materials" required>
+              <option *ngFor="let material of materials" [value]="material">{{ material }}</option>
+            </select>
+          
+           
+            <input *ngIf="showCustomMaterialInput" type="text" class="form-control mt-2" [(ngModel)]="customMaterial" name="customMaterial" placeholder="Entrez un matériau personnalisé">
+          </div>
+          
+          
+          
+          
+        
+          <button type="submit" class="tab textcolor button-hover col-12 mt-3" style="border: 1px solid #007bff;" (click)="addMaterialToSelectedMachine()">Add Machine</button>
+
+
+
+        
+
+        
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- Fin du Modal -->
+
+<!-- Modal for Finishes-->
+<div class="modal fade" id="exampleModalFinishes" tabindex="-1" aria-labelledby="exampleModalFinishes" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title textcolor" id="exampleModalFinishes">Select finishes</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <div class="col-12">
+              <label for="process" class="form-label">Select a service</label>
+              <select class="form-select" id="process" [(ngModel)]="newFinishes.process" (change)="onProcessChangeFinishes(newFinishes.process)" name="process" required>
+                <option value="" selected disabled>Choose a process</option>
+                <option value="TROIS_PRINTING">3D Printing</option>
+                <option value="CNC_MACHINING">CNC Machining</option>
+                <option value="LASER_CUTTING">Laser cutting</option>
+              </select>
+              <div class="invalid-feedback">Choose a specialist from the list!</div>
+            </div>
+          <!-- Sélecteur de finitions -->
+           <!-- Toujours afficher le label "Finishes" -->
+           <label for="finishes" class="form-label mt-2">Finishes</label>
+           <select class="form-select" id="name" name="name" [(ngModel)]="newFinishes.name" (change)="addFinish()" required>
+             <option value="" selected>Choose a finish</option>
+             <option *ngFor="let finish of selectedFinishes" [ngValue]="finish">{{ finish }}</option>
+           </select>
+
+            <div class="invalid-feedback">Choose a machine from the list!</div>
+          </div>
+        </form>
+
+
+        <div class="row justify-content-center mt-3">
+          <div class="col-lg-20">
+            <div class="table-responsive">
+              <table class="table table-striped">
+                  <thead>
+                  <tr class="textcolor">
+                    <th class="textcolor">service</th>
+                    <th>type of finishes</th>
+                    <th>Actions</th>
+
+                
+                  
+                  </tr>
+                </thead>
+                <tbody>
+      
+<tr *ngFor="let finish of finishes | paginate: { itemsPerPage: pageSizeFinish, currentPage: currentpageFinish }; let i=index">
+              <td class="">{{ finish.process }}</td> 
+              <td class="">{{ finish.name }}</td>
+                    <td>
+                      <div class="btn-group" role="group" aria-label="Basic example">
+                        
+                        
+                        <button type="button" class="btn btn-danger" (click)="deleteFinishes(finish.idFinishes)">
+                          <i class='bx bx-trash'></i>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+                
+              </table>
+            </div>
+            <pagination-controls (pageChange)="currentpageFinish = $event"></pagination-controls>
+      
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Fin du Modal -->
+
+
+
+
+
+
+
+<!-- modal confirm  de suprrision -->
+<div class="modal fade" id="exampleModalConfirm" tabindex="-1" aria-labelledby="exampleModalConfirm" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title textcolor" id="exampleModalConfirm" >Confirm</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+      </div>
+
+      <div class="modal-body">
+
+        <form >
+
+          <div class="form-group">
+
+            <div class="col-12">
+              <label for="process" class="form-label">Are you sure you want to delete this machine?</label>
+              <div class="d-flex pt-3 mb-3">
+                <button type="button" class="tab textcolorRed button-hover" style="border: 1px solid #007bff;" data-bs-dismiss="modal">CANCEL</button>
+                <button type="button" class="tab textcolorBlue button-hover" style="border: 1px solid #007bff;" (click)="confirmDelete()">CONFIRM</button>
+              </div>
+            </div>
+                  
+          </div>
+        
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- Fin du Modal -->
+
+
